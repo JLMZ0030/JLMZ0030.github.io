@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Storage Management and Redundancy</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800 scroll-smooth">
+
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md fixed w-full z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="font-bold text-xl text-blue-600">Storage Management & Redundancy</h1>
+      <div class="space-x-4">
+        <a href="#intro" class="hover:text-blue-500">Introduction</a>
+        <a href="#raid" class="hover:text-blue-500">RAID</a>
+        <a href="#lvm" class="hover:text-blue-500">LVM</a>
+        <a href="#nas-san" class="hover:text-blue-500">NAS vs SAN</a>
+        <a href="#conclusion" class="hover:text-blue-500">Conclusion</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-24 pb-16 text-center bg-gradient-to-b from-blue-600 to-blue-400 text-white">
+    <h2 class="text-4xl font-bold mb-4">Storage Management and Redundancy</h2>
+    <p class="text-lg mb-2">Course: Data Management Systems</p>
+    <p>Reporter: <strong>Kheem Redillas</strong> | Instructor: <em>[Insert Name]</em> | Date: <em>[Insert Date]</em></p>
+    <blockquote class="italic mt-6 opacity-90">“Data is the heart of every system — and storage keeps it alive.”</blockquote>
+  </section>
+
+  <!-- Introduction -->
+  <section id="intro" class="max-w-5xl mx-auto px-6 py-10">
+    <h3 class="text-2xl font-bold text-blue-600 mb-4">Introduction</h3>
+    <p>Storage Management refers to the process of efficiently storing, organizing, and protecting digital data.</p>
+    <p class="mt-2">Redundancy means creating backup or duplicate copies of data to ensure availability and reliability.</p>
+    <p class="mt-2">As data grows rapidly in the digital era, managing and protecting storage systems has become crucial.</p>
+    <ul class="list-disc list-inside mt-4">
+      <li>Understand RAID levels and their functions.</li>
+      <li>Learn about Logical Volume Management (LVM).</li>
+      <li>Compare NAS and SAN storage systems.</li>
+    </ul>
+  </section>
+
+  <!-- RAID Section -->
+  <section id="raid" class="bg-white py-10 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-2xl font-bold text-blue-600 mb-6">RAID: Redundant Array of Independent Disks</h3>
+      <p>RAID combines multiple hard drives into one logical unit to offer data protection and performance improvement. Common levels include RAID 0, 1, 5, and 10.</p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-8">
+        <div class="p-4 bg-blue-50 rounded-lg">
+          <h4 class="font-semibold mb-2">RAID 0 – Striping</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Splits data across multiple drives for speed.</li>
+            <li>No redundancy — one failure loses all data.</li>
+            <li>Best for non-critical high-speed tasks.</li>
+          </ul>
+        </div>
+
+        <div class="p-4 bg-blue-50 rounded-lg">
+          <h4 class="font-semibold mb-2">RAID 1 – Mirroring</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Duplicates data on two or more drives.</li>
+            <li>Provides excellent protection.</li>
+            <li>Half storage is used for duplication.</li>
+          </ul>
+        </div>
+
+        <div class="p-4 bg-blue-50 rounded-lg">
+          <h4 class="font-semibold mb-2">RAID 5 – Striping with Parity</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Balances speed, efficiency, and redundancy.</li>
+            <li>Can survive one drive failure.</li>
+            <li>Best for business servers.</li>
+          </ul>
+        </div>
+
+        <div class="p-4 bg-blue-50 rounded-lg">
+          <h4 class="font-semibold mb-2">RAID 10 – Mirroring + Striping</h4>
+          <ul class="list-disc list-inside text-sm">
+            <li>Combines RAID 0 and RAID 1.</li>
+            <li>High speed and strong redundancy.</li>
+            <li>Needs at least 4 drives; more expensive.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LVM Section -->
+  <section id="lvm" class="max-w-5xl mx-auto px-6 py-10">
+    <h3 class="text-2xl font-bold text-blue-600 mb-4">Logical Volume Management (LVM)</h3>
+    <p>LVM allows dynamic disk management without downtime. It consists of:</p>
+    <ul class="list-disc list-inside mt-3">
+      <li><strong>PV (Physical Volume):</strong> Actual disks.</li>
+      <li><strong>VG (Volume Group):</strong> Combined storage pool.</li>
+      <li><strong>LV (Logical Volume):</strong> Virtual partitions for use.</li>
+    </ul>
+    <p class="mt-3">LVM provides flexibility, scalability, and easier backups, making it ideal for large and growing data systems.</p>
+  </section>
+
+  <!-- NAS vs SAN -->
+  <section id="nas-san" class="bg-white py-10 px-6">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-2xl font-bold text-blue-600 mb-4">NAS vs SAN</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full border border-gray-200 text-sm">
+          <thead class="bg-blue-100">
+            <tr>
+              <th class="p-2 text-left">Feature</th>
+              <th class="p-2 text-left">NAS</th>
+              <th class="p-2 text-left">SAN</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t">
+              <td class="p-2">Type</td>
+              <td class="p-2">File-level storage</td>
+              <td class="p-2">Block-level storage</td>
+            </tr>
+            <tr class="border-t">
+              <td class="p-2">Access</td>
+              <td class="p-2">Local network (LAN)</td>
+              <td class="p-2">High-speed network (Fiber/iSCSI)</td>
+            </tr>
+            <tr class="border-t">
+              <td class="p-2">Cost</td>
+              <td class="p-2">Affordable</td>
+              <td class="p-2">Expensive</td>
+            </tr>
+            <tr class="border-t">
+              <td class="p-2">Use Case</td>
+              <td class="p-2">Home / Small Business</td>
+              <td class="p-2">Enterprise Data Centers</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusion -->
+  <section id="conclusion" class="max-w-5xl mx-auto px-6 py-10">
+    <h3 class="text-2xl font-bold text-blue-600 mb-4">Conclusion</h3>
+    <p>Storage management ensures data is organized, protected, and accessible, while redundancy safeguards against data loss. Technologies like RAID, LVM, NAS, and SAN make systems faster, safer, and more reliable.</p>
+    <p class="mt-3 font-semibold">Effective data management = Reliability + Performance + Security</p>
+
+    <h4 class="text-xl font-semibold mt-8 mb-2">References</h4>
+    <ul class="list-disc list-inside text-sm">
+      <li>Silberschatz, A., Galvin, P., & Gagne, G. (2020). <em>Operating System Concepts.</em> Wiley.</li>
+      <li>Red Hat, Inc. (2023). <em>Logical Volume Management (LVM) Guide.</em></li>
+      <li>Synology. (2024). <em>RAID Calculator and Storage Best Practices.</em></li>
+      <li>IBM Knowledge Center. (2023). <em>Storage Management and Data Redundancy.</em></li>
+      <li>Cisco. (2023). <em>NAS vs. SAN Storage Overview.</em></li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white text-center py-4 mt-10">
+    <p class="text-sm">© 2025 Storage Management Report by Kheem Redillas</p>
+  </footer>
+
+</body>
+</html>
